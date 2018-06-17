@@ -1,0 +1,27 @@
+﻿@using CandidateTracker.Data
+@model IEnumerable<Candidate>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 style="text-align:center">Pending Candidates</h3>
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <th>View Details</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Phone number</th>
+            </tr>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td><a href="/Home/ViewDetails?id=@c.Id">View Details</a></td>
+                    <td>@c.FirstName</td>
+                    <td>@c.LastName</td>
+                    <td>@c.EmailAddress</td>
+                    <td>@c.PhoneNumber</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
